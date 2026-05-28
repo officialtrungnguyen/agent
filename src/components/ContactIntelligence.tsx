@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Globe, Linkedin, NotebookPen, Sparkles, WandSparkles } from "lucide-react";
+import { ExternalLink, Globe, NotebookPen, Sparkles, WandSparkles } from "lucide-react";
 import { Contact, TimelineEvent } from "../types";
 import { buildFollowUpDraft, buildGoogleSearchUrl, buildLinkedInSearchUrl, daysSince } from "../utils";
 import { Badge, Button, Card, SectionHeading, Textarea } from "./ui";
@@ -32,7 +32,7 @@ export const ContactIntelligence = ({
           <div className="flex flex-wrap gap-2">
             <a href={buildLinkedInSearchUrl(contact)} target="_blank" rel="noreferrer">
               <Button variant="outline" size="sm">
-                <Linkedin className="h-4 w-4" />
+                <ExternalLink className="h-4 w-4" />
                 LinkedIn
               </Button>
             </a>
