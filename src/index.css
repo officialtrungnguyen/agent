@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+  background: #02050b;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at 20% 0%, #151b24 0, #05070c 45%, #02050b 75%);
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
