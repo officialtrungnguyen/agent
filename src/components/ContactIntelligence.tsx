@@ -190,8 +190,7 @@ import { ExternalLink, Mail, Sparkles, Star } from 'lucide-react';
                           onChange={(event) =>
                             onUpdateContact(contact.id, {
                               notes: event.target.value
-                                .split('
-')
+                                .split('\n')
                                 .map((item) => item.trim())
                                 .filter(Boolean),
                             })

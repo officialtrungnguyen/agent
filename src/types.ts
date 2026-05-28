@@ -30,7 +30,7 @@ export interface Contact {
   title: string;
   team: string;
   desk: string;
-  coverageSectors: string[];
+  coverageSectors: readonly string[];
   school: string;
   city: string;
   email: string;
@@ -39,12 +39,12 @@ export interface Contact {
   lastInteraction?: string;
   status: OutreachStatus;
   relationshipStrength: number;
-  notes: string[];
-  sharedInterests: string[];
-  styleNotes: string[];
+  notes: readonly string[];
+  sharedInterests: readonly string[];
+  styleNotes: readonly string[];
   recentTransactions: Transaction[];
-  teamMoves: string[];
-  deskMetrics: string[];
+  teamMoves: readonly string[];
+  deskMetrics: readonly string[];
 }
 
 export interface ResumeProfile {

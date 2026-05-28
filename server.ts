@@ -4,7 +4,7 @@ import express from 'express';
 import multer from 'multer';
 import { google } from 'googleapis';
 import type { Credentials } from 'google-auth-library';
-import pdfParse from 'pdf-parse';
+import { PDFParse } from 'pdf-parse';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -403,8 +403,10 @@ app.post('/api/resume/parse', upload.single('resume'), async (request, response)
 
     let rawText = '';
     if (file.mimetype === 'application/pdf' || file.originalname.toLowerCase().endsWith('.pdf')) {
-      const parsed = await pdfParse(file.buffer);
+      const parser = new PDFParse({ data: file.buffer });
+      const parsed = await parser.getText();
       rawText = parsed.text;
+      await parser.destroy();
     } else {
       rawText = file.buffer.toString('utf8');
     }

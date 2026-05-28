@@ -223,11 +223,15 @@ Original subject: ${latest.subject}` : ''),
           return `Stay disciplined: send high-fit notes in focused batches, use the deal-referenced variant when you have a real angle, and spend most of your time on ${topTargetSummary}.`;
         }
 
-        export function getAttachmentPayload(contact: Contact, resume: ResumeProfile, mode: AttachmentMode): QueueItem['attachmentContent'] extends string ? {
+        export function getAttachmentPayload(
+          contact: Contact,
+          resume: ResumeProfile,
+          mode: AttachmentMode,
+        ): {
           fileName: string;
           mimeType: string;
           content: string;
-        } | undefined : never {
+        } | undefined {
           if (mode === 'none') {
             return undefined;
           }

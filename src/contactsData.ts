@@ -367,7 +367,7 @@ function isoDate(daysAgo: number): string {
   return date.toISOString();
 }
 
-function buildTransactions(firm: string, sectors: string[], seed: number): Transaction[] {
+function buildTransactions(firm: string, sectors: readonly string[], seed: number): Transaction[] {
   return Array.from({ length: 3 }, (_, idx) => {
     const dealName = DEAL_NAMES[(seed + idx) % DEAL_NAMES.length];
     const counterparty = ACQUIRERS[(seed + idx * 2) % ACQUIRERS.length];
