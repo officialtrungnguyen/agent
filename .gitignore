@@ -10,3 +10,6 @@ dist-ssr
 .vite
 coverage
 .cache
+
+# TypeScript incremental build info
+*.tsbuildinfo
