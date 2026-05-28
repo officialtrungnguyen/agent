@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-graphite-50 text-graphite-900 antialiased;
+    font-feature-settings: "ss01", "cv02", "cv11";
+  }
+
+  ::selection {
+    @apply bg-graphite-900 text-graphite-50;
+  }
+}
+
+@layer components {
+  .micro {
+    @apply text-[10px] font-medium uppercase tracking-micro text-graphite-500 font-mono;
+  }
+  .micro-strong {
+    @apply text-[10px] font-semibold uppercase tracking-micro text-graphite-900 font-mono;
+  }
+  .hairline {
+    @apply border border-graphite-200;
+  }
+  .hairline-b {
+    @apply border-b border-graphite-200;
+  }
+  .hairline-t {
+    @apply border-t border-graphite-200;
+  }
+  .hairline-r {
+    @apply border-r border-graphite-200;
+  }
+  .panel {
+    @apply bg-white hairline rounded-sharp;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 h-8 px-3 text-xs font-medium tracking-tight rounded-sharp border transition-colors;
+  }
+  .btn-primary {
+    @apply btn bg-graphite-900 text-white border-graphite-900 hover:bg-graphite-800;
+  }
+  .btn-ghost {
+    @apply btn bg-white text-graphite-900 border-graphite-200 hover:bg-graphite-50;
+  }
+  .btn-outline {
+    @apply btn bg-transparent text-graphite-900 border-graphite-300 hover:bg-graphite-100;
+  }
+  .pill {
+    @apply inline-flex items-center gap-1.5 h-5 px-2 text-[10px] font-mono uppercase tracking-micro rounded-sharp;
+  }
+  .input {
+    @apply h-8 w-full px-2.5 text-xs bg-white border border-graphite-200 rounded-sharp placeholder:text-graphite-400 focus:outline-none focus:border-graphite-900;
+  }
+  .input-lg {
+    @apply h-10 w-full px-3 text-sm bg-white border border-graphite-200 rounded-sharp placeholder:text-graphite-400 focus:outline-none focus:border-graphite-900;
+  }
+  .label {
+    @apply micro mb-1.5 block;
+  }
+  .num {
+    @apply font-mono tabular-nums;
+  }
+  .scroll-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #c4c9d0 transparent;
+  }
+  .scroll-thin::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .scroll-thin::-webkit-scrollbar-thumb {
+    background: #c4c9d0;
+    border-radius: 4px;
+  }
+}
